@@ -51,7 +51,8 @@ jobs:
         sleep 20        
 
     - name: Update kube config
-      run: aws eks update-kubeconfig --name demo
+      run: |
+        aws eks update-kubeconfig --name demo
     
     - name: Deploy to EKS
       run: |
