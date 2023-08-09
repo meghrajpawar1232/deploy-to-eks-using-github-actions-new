@@ -1,0 +1,39 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: demo
+  region: us-east-1
+  tags:
+    Usage: POC
+# vpc:
+#   id: vpc-0e77027168dc9f3df
+#   subnets:
+#     private:
+#       us-east-1a:
+#         id: subnet-0f30ecfb245e14ff4
+#       us-east-1b:
+#         id: subnet-070c5866722872747
+#     public:
+#       us-east-1a:
+#         id: subnet-0d67859e216fb4ed8
+#       us-east-1b:
+#         id: subnet-012033282b792a6a2
+
+vpc:
+  nat:
+    gateway: Disable
+
+managedNodeGroups:
+  - name: private-demo-ng
+    instanceType: t2.medium
+    desiredCapacity: 1
+    minSize: 1
+    maxSize: 4
+    labels:
+      app.auth: "true"
+    ssh:
+      allow: true
+      publicKeyName: test-user
+    tags:
+      Usage: POC
