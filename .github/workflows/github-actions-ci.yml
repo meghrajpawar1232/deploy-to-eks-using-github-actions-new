@@ -25,7 +25,7 @@ jobs:
         uses: moia-oss/setup-eksctl@v1
         with:
           version: '0.136.0' # default is latest
-        id: install
+        id: insta
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
