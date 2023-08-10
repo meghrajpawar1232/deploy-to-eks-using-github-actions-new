@@ -55,8 +55,8 @@ jobs:
     #     eksctl create cluster --config-file k8s/cluster-config.yaml
     #     sleep 20        
 
-    - name: Update kube config
-      run: aws eks update-kubeconfig --name demo
+    # - name: Update kube config
+    #   run: aws eks update-kubeconfig --name demo
     
     - name: Deploy to EKS
       run: |
