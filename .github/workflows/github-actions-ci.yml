@@ -50,10 +50,10 @@ jobs:
         docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
 
-    - name: Create EKS cluster
-      run: |
-        eksctl create cluster --config-file k8s/cluster-config.yaml
-        sleep 20        
+    # - name: Create EKS cluster
+    #   run: |
+    #     eksctl create cluster --config-file k8s/cluster-config.yaml
+    #     sleep 20        
 
     - name: Update kube config
       run: aws eks update-kubeconfig --name demo
