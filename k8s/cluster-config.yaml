@@ -26,7 +26,7 @@ vpc:
 
 managedNodeGroups:
   - name: private-demo-ng
-    instanceType: t2.medium
+    instanceType: t2.small
     desiredCapacity: 1
     minSize: 1
     maxSize: 4
