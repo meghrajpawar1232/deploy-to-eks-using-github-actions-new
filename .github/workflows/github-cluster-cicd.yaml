@@ -1,4 +1,4 @@
-name: Node js app deploy to EKS
+name: Create cluster
 # on:
 #   push:
 #     branches: [ "main" ]
